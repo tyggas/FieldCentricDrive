@@ -20,7 +20,7 @@ public class TeleopExample extends LinearOpMode {
 
         while (!isStopRequested()) {
 
-            //Define controls for driving.
+            // Define controls for driving.
             double y = -gamepad1.left_stick_y;
             double x = gamepad1.left_stick_x;
             double rx = gamepad1.right_stick_x;
@@ -31,6 +31,8 @@ public class TeleopExample extends LinearOpMode {
             telemetry.addData("RX",rx);
             telemetry.addData("Tempo", getRuntime());
             telemetry.update();
+
+            // IMU reset for potential errors
             if (gamepad1.options) {
                 fieldOriented.resetIMU();
             }
