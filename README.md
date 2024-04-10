@@ -1,45 +1,59 @@
-## FieldCentricDrive
+## Road Runner with Field Centric Drive Repository Usage Guide
 
-Download this FieldCentric repository to Android Studio.
+This guide is intended to help you use a GitHub repository for an FTC (First Tech Challenge) code project that is a modification of the RoadRunner library and includes an adaptation of Field Centric Drive for the Teleoperated and Autonomous period.
 
-Hardware Configuration:
+### Step 1: Cloning the Repository
 
-Ensure that all necessary motors and sensors are properly connected to the robot controller.
-In the FieldCentric.java file, in the init() method, verify that the names of the motors and sensors correctly correspond to the identifiers in the FTC configuration file (usually hardware_map.xml).
-If necessary, adjust the IMU settings according to the real hardware orientation.
+1. Open a terminal or command prompt on your computer.
+2. Clone the repository using the following command:
+   ```
+   git clone --single-branch -b [branch_name] https://github.com/acmerobotics/road-runner-quickstart.git
+   ```
+   Make sure to replace `[branch_name]` with the specific branch name you want to clone. Typically, this branch will be related to the adaptation of Field Centric Drive for Teleoperated.
 
+### Step 2: Project Setup
 
-Encoder Configuration:
+1. Open Android Studio.
+2. In Android Studio, click on "Open an existing Android Studio project".
+3. Navigate to the directory where you cloned the repository and select it.
+4. Wait for Android Studio to set up the project.
 
-Ensure that the encoders are properly connected and configured in the robot hardware.
-If necessary, adjust the encoder directions in the init() method using perpendicularEncoder.setDirection(Encoder.Direction.REVERSE).
+### Step 3: Code Organization
 
+In this step, we will organize the code within the project repository in a more specific manner. Here's how you can structure it:
 
-Useful Methods:
+1. **Drive Folder (`drive`)**: Within this folder, you will find the code related to the robot's driving controls, both for teleoperated and autonomous modes.
 
-fieldOrientedDrive(double y, double x, double rx): Method to control the robot in field orientation. The parameters y, x, and rx represent the forward/backward, lateral, and rotation speeds, respectively.
-resetIMU(): Resets the IMU orientation.
-getParallelPosition(): Returns the current position of the robot in the parallel direction.
-getPerpendicularPosition(): Returns the current position of the robot in the perpendicular direction.
-Contribution and Improvements:
+   ```
+   |- road-runner-quickstart
+      |- drive
+         |- TeleOpDrive.java
+         |- AutonomousDrive.java
+         |- ...
+   ```
 
-Feel free to contribute improvements and suggestions to the code through my contact.
-Report any issues or bugs found using the GitHub issue tracking system. 
+2. **Subsystems Folder (`drive/subsystems`)**: This folder is designated for different subsystems of the robot. Specifically, the Field Centric Drive system is located here. Use this folder to create your own subsystems.
 
+   ```
+   |- road-runner-quickstart
+      |- drive
+         |- subsystems
+            |- FieldCentricDriveSubsystem.java
+            |- ...
+   ```
 
+By organizing the code in this manner, you can easily locate and manage different components of your project. The `drive` folder contains driving-related code, while the `subsystems` folder within it houses specific subsystem code, such as the Field Centric Drive system. This structure enhances readability and maintainability of the project.
 
-## Road Runner Quickstart
+### Step 4: Compiling the Project
 
-An example FTC project using [Road Runner](https://github.com/acmerobotics/road-runner).
+1. After the project is set up, you can compile the project as you would with any other `ftc_app` project.
+2. Make sure your Rev Control HUB device is connected to the computer.
+3. Click on "Run" in Android Studio to compile and install the app on the device.
 
-## Installation
+### Step 5: Troubleshooting
 
-1. Download or clone this repo with `git clone --single-branch -b quickstart1 https://github.com/acmerobotics/road-runner-quickstart.git`.
+- **Multidex Issues**: If you encounter issues with multidex, you can enable Proguard by changing `useProguard` to `true` in the `build.common.gradle` file.
 
-1. Open the project in Android Studio and build `TeamCode` like any other `ftc_app` project.
+### Step 6: Documentation
 
-1. If you have trouble with multidex, enable proguard by changing `useProguard` to `true` in `build.common.gradle`.
-
-## Documentation
-
-Check out the [online quickstart documentation](https://rr.brott.dev/docs/v0-5/quickstart/introduction/).
+1. For detailed information on getting started with the project, refer to the [online documentation of Road Runner](https://rr.brott.dev/docs/v0-5/quickstart/introduction/).
