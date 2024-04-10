@@ -18,10 +18,9 @@ public class TeleopExample extends LinearOpMode {
         FieldCentric fieldOriented = new FieldCentric();
         fieldOriented.init(hardwareMap);
 
-
         while (!isStopRequested()) {
 
-
+            //Define controls for driving.
             double y = -gamepad1.left_stick_y;
             double x = gamepad1.left_stick_x;
             double rx = gamepad1.right_stick_x;
