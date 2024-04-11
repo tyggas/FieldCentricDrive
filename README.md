@@ -9,7 +9,6 @@ This guide is intended to help you use a GitHub repository for an FTC (First Tec
    ```
    git clone --single-branch -b [RoadRunner] https://github.com/tyggas/FieldCentricDrive.git
    ```
-   Make sure to replace `[RoadRunner]` with the specific branch name you want to clone. Typically, this branch will be related to the adaptation of Field Centric Drive for Teleoperated.
 
 ### Step 2: Project Setup
 
