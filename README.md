@@ -7,9 +7,9 @@ This guide is intended to help you use a GitHub repository for an FTC (First Tec
 1. Open a terminal or command prompt on your computer.
 2. Clone the repository using the following command:
    ```
-   git clone --single-branch -b [branch_name] https://github.com/acmerobotics/road-runner-quickstart.git
+   git clone --single-branch -b [RoadRunner] https://github.com/tyggas/FieldCentricDrive.git
    ```
-   Make sure to replace `[branch_name]` with the specific branch name you want to clone. Typically, this branch will be related to the adaptation of Field Centric Drive for Teleoperated.
+   Make sure to replace `[RoadRunner]` with the specific branch name you want to clone. Typically, this branch will be related to the adaptation of Field Centric Drive for Teleoperated.
 
 ### Step 2: Project Setup
 
